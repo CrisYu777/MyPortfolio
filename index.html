@@ -1251,7 +1251,7 @@
         <div
           v-for="(job, index) in jobs"
           :key="index"
-          class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg group overflow-hidden md:overflow-visible transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105 w-full sm:w-3/4 lg:w-2/3 max-w-3xl"
+          class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg group overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105 w-full sm:w-3/4 lg:w-2/3 max-w-3xl min-h-[500px] sm:min-h-[320px]"
           :style="{
             backgroundImage: `url('./background/Card-background${index + 3}.png')`,
             backgroundSize: 'cover',
@@ -1261,14 +1261,14 @@
           <!-- Hover overlay -->
           <div class="absolute inset-0 bg-black opacity-20 transition-opacity duration-300 group-hover:opacity-40"></div>
           <!-- Job content -->
-          <div class="relative p-6 text-white z-10 flex flex-col overflow-y-auto max-h-screen">
+          <div class="relative p-6 text-white z-10 flex flex-col h-full overflow-y-auto hide-scrollbar">
             <!-- Company Icon -->
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
                 <img :src="job.icon" alt="Company Icon" class="w-8 h-8 object-contain" />
               </div>
               <div>
-                <h3 class="text-lg sm:text-xl font-bold">{{ job.company }}</h3>
+                <h3 class="text-xl font-bold">{{ job.company }}</h3>
                 <p class="text-sm opacity-80">{{ job.role }} | {{ job.duration }}</p>
               </div>
             </div>
@@ -1290,6 +1290,7 @@
     </div>
   </div>
 </section>
+
 
   
   <!-- Projects Section -->
