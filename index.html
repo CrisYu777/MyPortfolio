@@ -1250,18 +1250,17 @@
         <div
           v-for="(job, index) in jobs"
           :key="index"
-          class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg group overflow-hidden md:overflow-visible transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105 w-full md:w-3/4 max-w-3xl"
+          class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg group overflow-hidden md:overflow-visible transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105 w-full md:w-3/4 max-w-3xl max-h-screen overflow-y-auto"
           :style="{
             backgroundImage: `url('./background/Card-background${index + 3}.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            // 移除固定高度
           }"
         >
           <!-- Hover overlay -->
           <div class="absolute inset-0 bg-black opacity-20 transition-opacity duration-300 group-hover:opacity-40"></div>
           <!-- Job content -->
-          <div class="relative p-6 text-white z-10 flex flex-col justify-center h-full">
+          <div class="relative p-6 text-white z-10 flex flex-col justify-center">
             <!-- Company Icon -->
             <div class="flex items-center mb-4">
               <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mr-4">
@@ -1273,7 +1272,7 @@
               </div>
             </div>
             <!-- Responsibilities -->
-            <div class="mt-2 text-sm leading-relaxed" v-html="job.responsibilities"></div>
+            <div class="mt-2 text-sm leading-relaxed break-words" v-html="job.responsibilities"></div>
             <!-- Technologies -->
             <div class="flex flex-wrap gap-2 mt-4">
               <span
@@ -1290,6 +1289,7 @@
     </div>
   </div>
 </section>
+
 
   
   <!-- Projects Section -->
