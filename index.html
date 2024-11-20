@@ -986,7 +986,7 @@
           <!-- Home section -->
 <section id="home" class="py-20 relative">
     <!-- Video Background -->
-    <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
         <source src="./background/BackgroundVedio1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -1263,9 +1263,10 @@
           <div class="relative p-6 text-white z-10 flex flex-col justify-center">
             <!-- Company Icon -->
             <div class="flex items-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-                <img :src="job.icon" alt="Company Icon" class="w-12 h-12 object-contain" />
-              </div>
+              <!-- Company Icon -->
+<div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mr-4 overflow-hidden">
+    <img :src="job.icon" alt="Company Icon" class="w-full h-full object-cover" />
+</div>
               <div>
                 <h3 class="text-xl font-bold">{{ job.company }}</h3>
                 <p class="text-sm opacity-80">{{ job.role }} | {{ job.duration }}</p>
