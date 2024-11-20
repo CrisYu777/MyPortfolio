@@ -1266,16 +1266,15 @@
             <div class="absolute inset-0 bg-black opacity-20 transition-opacity duration-300 group-hover:opacity-40"></div>
             <!-- Job content -->
             <div class="relative p-6 text-white z-10 flex flex-col justify-center h-full">
-              <!-- Company Icon -->
-              <div class="flex items-center mb-4">
-                <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-                  <img :src="job.icon" alt="Company Icon" class="w-12 h-12 object-contain" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold">{{ job.company }}</h3>
-                  <p class="text-sm opacity-80">{{ job.role }} | {{ job.duration }}</p>
-                </div>
-              </div>
+             <div class="flex items-center mb-4">
+    <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+      <img :src="job.icon" alt="Company Icon" class="w-8 h-8 object-contain" />
+    </div>
+    <div>
+      <h3 class="text-xl font-bold">{{ job.company }}</h3>
+      <p class="text-sm opacity-80">{{ job.role }} | {{ job.duration }}</p>
+    </div>
+  </div>
               <!-- Responsibilities -->
               <div class="mt-2 text-sm leading-relaxed" v-html="job.responsibilities"></div>
               <!-- Technologies -->
