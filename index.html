@@ -991,6 +991,7 @@
         Your browser does not support the video tag.
     </video>
     
+    
     <!-- Content Wrapper -->
     <div class="flex flex-col items-center mx-auto px-6 text-center relative z-10">
         <!-- Profile Picture -->
@@ -1236,62 +1237,63 @@
                 </div>
             </section>
 
+
 <!-- Experience -->
 <section id="experience" class="py-20 relative">
-  <div class="relative inset-0">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12">
-      <span class="text-gray-700 dark:text-gray-300">
-        {{ currentLanguage === 'en' ? 'Professional Journey' : '职业历程' }}
-      </span>
-    </h2>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Vertical layout -->
-      <div class="flex flex-col items-center gap-10">
-        <div
-          v-for="(job, index) in jobs"
-          :key="index"
-          class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg group overflow-hidden md:overflow-visible transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105 w-full md:w-3/4 max-w-3xl max-h-screen overflow-y-auto"
-          :style="{
-            backgroundImage: `url('./background/Card-background${index + 3}.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }"
-        >
-          <!-- Hover overlay -->
-          <div class="absolute inset-0 bg-black opacity-20 transition-opacity duration-300 group-hover:opacity-40"></div>
-          <!-- Job content -->
-          <div class="relative p-6 text-white z-10 flex flex-col justify-center">
-            <!-- Company Icon -->
-            <div class="flex items-center mb-4">
+    <div class="relative inset-0">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12">
+        <span class="text-gray-700 dark:text-gray-300">
+          {{ currentLanguage === 'en' ? 'Professional Journey' : '职业历程' }}
+        </span>
+      </h2>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Vertical three-row layout -->
+        <div class="flex flex-col items-center gap-10">
+          <div
+            v-for="(job, index) in jobs"
+            :key="index"
+            class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-lg group overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105"
+            :style="{
+              backgroundImage: `url('./background/Card-background${index + 3}.png')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              width: '70%',
+              maxWidth: '900px',
+              height: '320px' // Slightly increased height
+            }"
+          >
+            <!-- Hover overlay -->
+            <div class="absolute inset-0 bg-black opacity-20 transition-opacity duration-300 group-hover:opacity-40"></div>
+            <!-- Job content -->
+            <div class="relative p-6 text-white z-10 flex flex-col justify-center h-full">
               <!-- Company Icon -->
-<div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mr-4 overflow-hidden">
-    <img :src="job.icon" alt="Company Icon" class="w-full h-full object-cover" />
-</div>
-              <div>
-                <h3 class="text-xl font-bold">{{ job.company }}</h3>
-                <p class="text-sm opacity-80">{{ job.role }} | {{ job.duration }}</p>
+              <div class="flex items-center mb-4">
+                <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                  <img :src="job.icon" alt="Company Icon" class="w-12 h-12 object-contain" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold">{{ job.company }}</h3>
+                  <p class="text-sm opacity-80">{{ job.role }} | {{ job.duration }}</p>
+                </div>
               </div>
-            </div>
-            <!-- Responsibilities -->
-            <div class="mt-2 text-sm leading-relaxed break-words" v-html="job.responsibilities"></div>
-            <!-- Technologies -->
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span
-                v-for="tech in job.technologies"
-                :key="tech.name"
-                class="flex items-center px-3 py-1 bg-gray-700/50 rounded-full text-sm font-medium transition-all duration-300 group-hover:bg-gray-500"
-              >
-                <i :class="tech.icon" class="mr-2"></i> {{ tech.name }}
-              </span>
+              <!-- Responsibilities -->
+              <div class="mt-2 text-sm leading-relaxed" v-html="job.responsibilities"></div>
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span
+                  v-for="tech in job.technologies"
+                  :key="tech.name"
+                  class="flex items-center px-3 py-1 bg-gray-700/50 rounded-full text-sm font-medium transition-all duration-300 group-hover:bg-gray-500"
+                >
+                  <i :class="tech.icon" class="mr-2"></i> {{ tech.name }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
   
   <!-- Projects Section -->
 <section id="projects" class="py-20">
