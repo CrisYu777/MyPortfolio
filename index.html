@@ -1162,19 +1162,19 @@
                         </ul>
                         </div>
                     </div>
-            
-                   <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+             <!-- Education -->
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
   <h3 class="text-2xl font-bold mb-6 text-gray-700 dark:text-gray-300">
     {{ currentLanguage === 'en' ? 'Education' : '教育背景' }}
   </h3>
-  <div v-for="(edu, index) in education" :key="index" class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-    <!-- Icon -->
-    <div class="flex items-center">
-      <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-        <img :src="edu.icon" alt="Degree Icon" class="w-10 h-10 object-contain" />
+  <div v-for="(edu, index) in education" :key="index" class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 min-h-[160px]">
+    <!-- 左侧图标和名称 -->
+    <div class="flex items-center gap-4">
+      <div class="w-14 h-14 rounded-full bg-gray-300 flex items-center justify-center">
+        <img :src="edu.icon" alt="Degree Icon" class="w-12 h-12 object-contain" />
       </div>
       <div>
-        <p class="text-lg font-medium text-gray-700 dark:text-gray-300 italic">
+        <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">
           {{ edu.degree }}
         </p>
         <p class="text-sm text-gray-600 dark:text-gray-400">
@@ -1182,8 +1182,8 @@
         </p>
       </div>
     </div>
-    <!-- Duration & Honors -->
-    <div class="sm:text-right text-sm">
+    <!-- 右侧时间和荣誉 -->
+    <div class="text-right text-sm sm:text-base">
       <p class="font-medium text-gray-600 dark:text-gray-400">
         {{ edu.duration }}
       </p>
@@ -1193,6 +1193,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Call to Action -->
 
